@@ -48,3 +48,52 @@ app.get('/', (req, res) => {
 
 // HTTP SERVER
 app.listen(port, () => console.log(`Listening on port: ${port}`));
+
+
+//  const options: any = {
+//             method: 'GET',
+//             headers: {
+//                 'Accept': 'application/json',
+//                 'Content-Type': 'application/json',
+
+//             },
+//             credentials: "same-origin"
+//         };
+//         try {
+//             fetch(`http://localhost:5001?file=pdf`, options)
+//                 .then((response) => response.blob())
+//                 .then((blob) => {
+//                     const url = window.URL.createObjectURL(new Blob([blob],  { type: 'application/pdf' }));
+//                     const link = document.createElement('a');
+//                     link.href = url;
+//                     link.setAttribute('download', `sample.pdf`);
+//                     link.setAttribute('id', `frame`);
+//                     document.body.appendChild(link);
+//                     link.click();
+
+
+//                     let iframe = document.createElement('iframe');
+//                     iframe.id = 'pdfIframe'
+//                     iframe.className='pdfIframe'
+//                     document.body.appendChild(iframe);
+//                     iframe.style.display = 'none';
+//                     iframe.src = url;
+//                     iframe.onload = function () {
+//                         setTimeout(function () {
+//                             iframe.focus();
+//                             if (iframe.contentWindow) iframe.contentWindow.print();
+
+//                         }, 1000);
+//                     };
+//                     setTimeout(() => {
+//                         document.body.removeChild(iframe)
+//                         document.body.removeChild(link)
+//                          URL.revokeObjectURL(url)
+//                     }, 10000)
+
+
+//                 })
+//                 .then(res => console.log(res))
+//         } catch (error) {
+//             return Promise.reject(new Error(error))
+//         }
